@@ -12,9 +12,15 @@ var createScene = function() {
 	var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
 	light.intensity = 0.75;
 
-	var sphere = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
+	var light0 = new BABYLON.PointLight("Omni0", new BABYLON.Vector3(1, 10, 1), scene);
+	light0.diffuse = new BABYLON.Color3(1, 0, 0);
+	light0.specular = new BABYLON.Color3(1, 1, 1);
+
+	var sphere = BABYLON.Mesh.CreateSphere("sphere1", 32, 2, scene);
 	sphere.position.y = 1;
 	sphere.position.z = -1;
+	sphere.material = new BABYLON.StandardMaterial("texture1", scene);
+	sphere.material.bumpTexture = new BABYLON.Texture("img/normalmap.jpg", scene);
 
 	var box = BABYLON.Mesh.CreateBox("box", 1.5, scene);
 	box.position.x = -3;
