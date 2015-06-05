@@ -44,7 +44,9 @@ var createScene = function() {
 	var boxMultiMaterial = new BABYLON.MultiMaterial("cubeMulti", scene);
 	for(var i = 0; i < 4; i++) {
 		var dynamicTexture = new BABYLON.DynamicTexture("dynamicTexture", 512, scene, true);
-		dynamicTexture.drawText("#partyprint", 50, 410, "bold 70px ComicSansMS", "#555", "#fff");
+		dynamicTexture.drawText("#partyprint", null, 410, "bold 70px ComicSansMS", "#555", "white");
+		// dynamicTexture.drawText("#partyprint", null, 200, "bold 70px Arial", "#555", "#fff");
+		dynamicTexture.drawText("Монохромная часть + свет", null, 200, "20px Arial", "#555", "transparent");
 
 		dynamicTexture.wAng = angles[i];
 
